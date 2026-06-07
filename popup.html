@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerTab Plus</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-panel="sessions">📁 Sessions</button>
+      <button class="tab-btn" data-panel="tabs">🔖 Tabs</button>
+      <button class="tab-btn" data-panel="darkmode">🌓 Dark</button>
+      <button class="tab-btn" data-panel="notes">📝 Notes</button>
+    </nav>
+
+    <div class="panels">
+      <!-- Sessions Panel -->
+      <div id="sessions-panel" class="panel active">
+        <div class="panel-header">
+          <h2>Phiên làm việc</h2>
+          <button id="save-session-btn" class="btn primary">➕ Lưu phiên</button>
+        </div>
+        <div id="sessions-list" class="list"></div>
+        <div id="no-sessions" class="empty-state">Chưa có phiên nào.</div>
+      </div>
+
+      <!-- Tabs Panel -->
+      <div id="tabs-panel" class="panel">
+        <div class="panel-header">
+          <h2>Tab đang mở</h2>
+          <input type="text" id="tab-search" placeholder="Lọc tab..." autocomplete="off">
+        </div>
+        <div id="tabs-list" class="list"></div>
+      </div>
+
+      <!-- Dark Mode Panel -->
+      <div id="darkmode-panel" class="panel">
+        <div class="panel-header">
+          <h2>Dark Mode</h2>
+        </div>
+        <div class="darkmode-info">
+          <p>Trang hiện tại: <strong id="current-host"></strong></p>
+          <button id="toggle-dark-btn" class="btn secondary">Bật Dark Mode</button>
+        </div>
+      </div>
+
+      <!-- Notes Panel -->
+      <div id="notes-panel" class="panel">
+        <div class="panel-header">
+          <h2>Ghi chú nhanh</h2>
+          <button id="save-notes-btn" class="btn primary">💾 Lưu</button>
+        </div>
+        <textarea id="notes-area" placeholder="Bắt đầu ghi chú..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
